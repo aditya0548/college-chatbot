@@ -33,7 +33,7 @@ Rules:
 
   try {
     let response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,11 +42,11 @@ Rules:
     );
     let data = await response.json();
     
-    // First fallback: gemini-2.0-flash
+    // First fallback: gemini-3.5-flash
     if (!response.ok && data.error?.code === 404) {
-      console.warn('gemini-2.5-flash returned 404, falling back to gemini-2.0-flash...');
+      console.warn('gemini-3.6-flash returned 404, falling back to gemini-3.5-flash...');
       response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -56,11 +56,11 @@ Rules:
       data = await response.json();
     }
 
-    // Second fallback: gemini-2.5-flash-lite
+    // Second fallback: gemini-3.5-flash-lite
     if (!response.ok && data.error?.code === 404) {
-      console.warn('gemini-2.0-flash returned 404, falling back to gemini-2.5-flash-lite...');
+      console.warn('gemini-3.5-flash returned 404, falling back to gemini-3.5-flash-lite...');
       response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
