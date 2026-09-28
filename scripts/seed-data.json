@@ -1,0 +1,261 @@
+[
+  {
+    "category": "History",
+    "question_patterns": ["history", "founded", "established", "when", "started", "1947", "hivale"],
+    "answer": "Ahmednagar College was founded in **1947** by Rev. Dr. Bhaskar Pandurang Hivale (Ph.D. from Harvard). It is the **first college established in Ahmednagar district** and is now managed by the BPHE Society. It's a Christian Minority Institution open to all castes, creeds, and religions.",
+    "confidence": "high",
+    "source": "Official college history"
+  },
+  {
+    "category": "Leadership",
+    "question_patterns": ["principal", "head", "leader", "headmaster", "director", "barnabas"],
+    "answer": "The Principal of Ahmednagar College is **Dr. R. J. Barnabas**. For direct contact, reach the college at **0241-2359571** or email **ahmednagarcollege1947@gmail.com**.",
+    "confidence": "high",
+    "source": "College administration"
+  },
+  {
+    "category": "Contact",
+    "question_patterns": ["contact", "phone", "number", "email", "address", "where", "location", "reach", "how", "station"],
+    "answer": "**Address:** Station Road, Ahmednagar – 414001, Maharashtra, India\n**Phone:** 0241-2359571\n**Email:** ahmednagarcollege1947@gmail.com\n**Website:** www.aca.edu.in\n\nThe campus is centrally located near Ahmednagar Railway Station, making it easily accessible for commuting students.",
+    "confidence": "high",
+    "source": "Official contact"
+  },
+  {
+    "category": "Accreditation",
+    "question_patterns": ["naac", "accreditation", "ugc", "affiliated", "sppu", "university", "grade", "ranking"],
+    "answer": "Ahmednagar College is:\n• **NAAC accredited** with a B++ Grade (subject to change post-reaccreditation)\n• Recognized under **Sections 2(f) and 12(B) of the UGC Act**\n• **Permanently affiliated** with **Savitribai Phule Pune University (SPPU)**\n• Previously recognized as a **\"College with Potential for Excellence\"** by UGC",
+    "confidence": "high",
+    "source": "NAAC / UGC"
+  },
+  {
+    "category": "Vision & Mission",
+    "question_patterns": ["vision", "mission", "values", "motto", "goal", "aim", "purpose"],
+    "answer": "**Motto:** \"Not Things but Men\"\n\n**Vision:** To be an institution of excellence in higher education that continually responds to changing social realities.\n\n**Mission:** To create a teaching-learning environment that fosters critical thinking, ethical values, and social responsibility, ensuring holistic development of students.",
+    "confidence": "high",
+    "source": "Official college vision"
+  },
+  {
+    "category": "Programs - Undergraduate",
+    "question_patterns": ["ug", "undergraduate", "bachelor", "ba", "bcom", "bsc", "bca", "bba", "courses", "degrees", "programs"],
+    "answer": "**Undergraduate programs (3 years each):**\n• **B.A.** — English, Hindi, Marathi, Economics, History, Political Science, Psychology, Sociology, Geography\n• **B.Com** — Accounting, Auditing, Costing, Business Administration, Marketing\n• **B.Sc (General)** — Physics, Chemistry, Botany, Zoology, Math, Statistics, Geography\n• **B.Sc (Computer Science)** — Most competitive, highest placements\n• **B.Sc (Biotechnology)** — Genetics, Molecular Biology, Immunology\n• **B.Sc (Microbiology)** — Clinical & Industrial Microbiology\n• **BCA** — Software development, web design, app development\n• **BBA** — Corporate management, HR, Finance, Marketing\n\nAdmissions are merit-based on 10+2 (HSC) marks.",
+    "confidence": "high",
+    "source": "Academic catalog"
+  },
+  {
+    "category": "Programs - Postgraduate",
+    "question_patterns": ["pg", "postgraduate", "master", "ma", "mcom", "msc", "masters"],
+    "answer": "**Postgraduate programs (2 years each):**\n• **M.A.** — English, Marathi, Hindi, Economics, History, Political Science, Psychology, Sociology\n• **M.Com** — Advanced Accounting & Taxation, Cost Accounting\n• **M.Sc** — Chemistry (Organic/Analytical/Drug), Physics, Botany, Zoology, Math, Microbiology, Computer Science\n\nAdmissions based on the relevant Bachelor's degree marks. M.Sc Chemistry and Computer Science have near 100% placement records.",
+    "confidence": "high",
+    "source": "Academic catalog"
+  },
+  {
+    "category": "Programs - Doctoral",
+    "question_patterns": ["phd", "doctorate", "research", "pet", "net", "jrf", "scholar"],
+    "answer": "Ahmednagar College is a **recognized Research Center under SPPU**. Ph.D. programs are available primarily in Sciences and select Arts disciplines. Departments recognized as research centers include Zoology, Chemistry, Botany, and English.\n\n**Eligibility:** Master's degree with 55%+ marks and SPPU PET qualification (or UGC-NET/JRF).",
+    "confidence": "high",
+    "source": "SPPU / Research center"
+  },
+  {
+    "category": "Fees",
+    "question_patterns": ["fee", "fees", "cost", "tuition", "charges", "how", "much", "price", "rupees"],
+    "answer": "**Approximate annual fees (Open category — subject to annual SPPU revision):**\n• **B.A. / B.Com** (grantable): ₹2,400 – ₹7,400\n• **B.Sc General Science:** ₹25,000 – ₹28,000\n• **B.Sc Computer Science / Biotech:** ₹30,000 – ₹35,000\n• **BCA / BBA:** ₹15,000 – ₹22,000\n• **M.A.:** ₹2,000 – ₹15,000\n• **M.Sc / M.Com:** ₹10,400 – ₹25,000\n\n**Note:** Fees vary significantly by category (Open, OBC, SC, ST). OBC/SC/ST students get large concessions via MahaDBT. Confirm the exact amount at the admission office: **0241-2359571**.",
+    "confidence": "medium",
+    "source": "Approximate college data — verify with office"
+  },
+  {
+    "category": "Scholarships",
+    "question_patterns": ["scholarship", "financial", "aid", "mahadbt", "free", "concession", "ebc", "obc", "sc", "st", "earn", "learn"],
+    "answer": "Ahmednagar College implements all state and central government scholarship schemes:\n\n• **MahaDBT Portal** — SC, ST, VJNT, OBC, SBC categories get freehips (full fee waiver)\n• **EBC Concession** — 50% tuition fee waiver for Economically Backward Class students\n• **Karmaveer Bhaurao Patil Earn & Learn Scheme** — economically weaker students can work in library or admin office for hourly stipend\n\nApply through the official MahaDBT portal: mahadbt.maharashtra.gov.in",
+    "confidence": "high",
+    "source": "Government schemes"
+  },
+  {
+    "category": "Admission Process",
+    "question_patterns": ["admission", "apply", "application", "how", "process", "register", "enroll", "join"],
+    "answer": "**Admission process for Ahmednagar College:**\n\n1. **Online Registration** — Visit www.aca.edu.in, create a user ID and password\n2. **Application Form** — Fill personal details, educational history, select course. Upload photo, signature, 10th & 12th marksheets, leaving certificate, caste certificate (if applicable)\n3. **Merit List** — Based on marks and intake, successive merit lists are published on the website\n4. **Document Verification** — Shortlisted candidates visit the campus with original documents\n5. **Fee Payment** — Payment link activates after verification. Admission confirmed only after payment.\n\nAdmissions are entirely online via the college's ERP system.",
+    "confidence": "high",
+    "source": "College admission portal"
+  },
+  {
+    "category": "Campus",
+    "question_patterns": ["campus", "infrastructure", "facilities", "green", "acres", "size", "building"],
+    "answer": "Ahmednagar College has a **sprawling 32.9-acre green campus** blending mid-20th-century heritage architecture with modern academic blocks. The campus features:\n\n• Central Library with 200,000+ volumes\n• Separate hostels for boys (650) and girls (250)\n• Multiple sports facilities — cricket, football, athletics, basketball, volleyball, tennis\n• Fully equipped indoor gymnasium\n• Advanced science labs with modern instrumentation\n• Multiple computer labs with broadband\n• 6 canteens, post office, banking facilities, auditorium, medical room",
+    "confidence": "high",
+    "source": "Official campus info"
+  },
+  {
+    "category": "Library",
+    "question_patterns": ["library", "books", "learning", "resource", "centre", "center", "study", "reading"],
+    "answer": "The **Central Library (Learning Resource Centre)** at Ahmednagar College is one of the largest in the district. It houses:\n\n• **200,000+ volumes** including rare books, journals, and CDs\n• Automated issue-return system\n• Spacious reading hall\n• Digital section with INFLIBNET N-List database access\n\nOpen to all enrolled students and faculty.",
+    "confidence": "high",
+    "source": "Library department"
+  },
+  {
+    "category": "Hostel",
+    "question_patterns": ["hostel", "accommodation", "stay", "room", "boarding", "residence", "dorm"],
+    "answer": "Ahmednagar College provides separate hostels:\n\n• **Boys' Hostel** — capacity ~650 students across multiple blocks\n• **Girls' Hostel** — capacity ~250 students\n\n**Facilities include:** solar water heaters, RO drinking water, Wi-Fi zones. Both hostels are on-campus and monitored by wardens.\n\nContact the college for hostel admission: **0241-2359571**",
+    "confidence": "high",
+    "source": "Hostel office"
+  },
+  {
+    "category": "Placements",
+    "question_patterns": ["placement", "job", "salary", "package", "recruiter", "career", "company", "package", "lpa", "interview"],
+    "answer": "**Placement highlights at Ahmednagar College:**\n\n• **Highest package:** ~6.5 LPA (mostly B.Sc CS / BCA / MCA students)\n• **Average package:** 3.3 – 3.6 LPA\n• **Strong placements:** IT, Computer Science, specialized Chemistry programs\n• **Moderate placements:** Arts/Commerce streams\n\n**Top recruiters:**\n• IT: Cognizant, Wipro, Tech Mahindra, TCS, Infosys\n• Pharma: Lupin, Sun Pharma, Cipla, Ranbaxy, Serum Institute\n• Finance: ICICI Bank, HDFC, local cooperative banks\n\nThe Training & Placement Cell runs resume workshops, mock interviews, aptitude prep, and soft-skills training (including a BPO skills certificate course) before campus drives in the final semester.",
+    "confidence": "medium",
+    "source": "Approximate placement data — verify with placement cell"
+  },
+  {
+    "category": "Extracurriculars",
+    "question_patterns": ["ncc", "nss", "clubs", "activities", "sports", "cultural", "extracurricular", "fest"],
+    "answer": "Ahmednagar College offers rich extracurricular opportunities:\n\n• **NCC** — Headquarters for 17 Maharashtra Battalion. Rigorous military training, 'B' & 'C' certificate exams (huge advantage for defense/police careers)\n• **NSS** — Active social work: winter camps, literacy drives, blood donation, tree plantation, health awareness\n• **Cultural Committee** — Hosts \"Horizon\", the flagship annual inter-collegiate festival\n• **Debate & Elocution Society** — Training for state/national competitions\n• **Science Forum** — Exhibitions, guest lectures, study tours\n• **Women's Empowerment Cell** — Self-defense workshops, legal rights, health hygiene\n\nSports: Cricket, football, athletics, basketball, volleyball, tennis, and an indoor gymnasium.",
+    "confidence": "high",
+    "source": "Student affairs"
+  },
+  {
+    "category": "Research",
+    "question_patterns": ["research", "journals", "publication", "inflibnet", "dst", "funding"],
+    "answer": "Ahmednagar College has a strong research ecosystem:\n\n• Recognized **Research Center under SPPU**\n• Faculty hold research projects funded by **UGC, DST, and BCUD**\n• Access to international journals via **INFLIBNET**\n• Specialized labs and computational facilities for research scholars\n• Departments like Zoology, Chemistry, Botany, and English are recognized research centers\n\nPh.D. scholars need a Master's with 55%+ and SPPU PET (or UGC-NET/JRF).",
+    "confidence": "high",
+    "source": "Research center"
+  },
+  {
+    "category": "Women's Cell",
+    "question_patterns": ["women", "girls", "safety", "harassment", "cell", "empowerment"],
+    "answer": "The **Women's Empowerment Cell** at Ahmednagar College conducts:\n\n• Self-defense workshops\n• Legal rights awareness sessions\n• Health and hygiene workshops\n• Support for female students facing any issues on campus\n\nThe cell works closely with the college administration to ensure a safe, supportive environment for all female students.",
+    "confidence": "high",
+    "source": "Student affairs"
+  },
+  {
+    "category": "IT / Computer Science",
+    "question_patterns": ["cs", "computer", "it", "programming", "software", "bca", "bsc", "labs"],
+    "answer": "The Computer Science department at Ahmednagar College offers:\n\n• **B.Sc Computer Science** — highest placement rate in the college\n• **BCA** — software development, web design, app development\n• **B.Sc CS / Biotech** — ₹30,000–₹35,000/year (approx, Open category)\n\n**Facilities:** Multiple computer labs with broadband internet, modern programming tools, and industry-oriented curriculum.\n\nRecruiters: Cognizant, Wipro, Tech Mahindra, TCS, Infosys.",
+    "confidence": "high",
+    "source": "CS department"
+  },
+  {
+    "category": "Science Departments",
+    "question_patterns": ["physics", "chemistry", "botany", "zoology", "math", "statistics", "biology", "microbiology", "biotech", "science"],
+    "answer": "The Science faculty at Ahmednagar College is one of the most robust divisions:\n\n**Undergraduate:** B.Sc General (Physics, Chemistry, Botany, Zoology, Math, Statistics, Geography), B.Sc Computer Science, B.Sc Biotechnology, B.Sc Microbiology\n\n**Postgraduate:** M.Sc in Chemistry (Organic/Analytical/Drug), Physics, Botany, Zoology, Math, Microbiology, Computer Science\n\n**Highlights:**\n• Drug Chemistry and Computer Science have near 100% placement\n• Strong ties with local pharma (Serum Institute, Lupin)\n• Advanced lab setups\n• Research focus with UGC/DST funding",
+    "confidence": "high",
+    "source": "Science departments"
+  },
+  {
+    "category": "Arts Departments",
+    "question_patterns": ["arts", "english", "history", "psychology", "sociology", "economics", "political", "marathi", "hindi", "geography"],
+    "answer": "The Arts faculty at Ahmednagar College offers:\n\n**Undergraduate:** B.A. in English, Hindi, Marathi, Economics, History, Political Science, Psychology, Sociology, Geography\n\n**Postgraduate:** M.A. in English, Marathi, Hindi, Economics, History, Political Science, Psychology, Sociology\n\n**Highlights:**\n• The **Psychology department** has an active counseling cell\n• **English and Psychology** departments frequently publish in national journals\n• Strong preparation for NET/SET exams",
+    "confidence": "high",
+    "source": "Arts departments"
+  },
+  {
+    "category": "Commerce",
+    "question_patterns": ["commerce", "bcom", "accounting", "auditing", "costing", "ca", "cs", "finance"],
+    "answer": "The **B.Com program** at Ahmednagar College covers:\n\n• Advanced Accounting\n• Auditing\n• Costing\n• Business Administration\n• Marketing\n\n**Eligibility:** 10+2 (Commerce preferred, but other streams accepted with bridge courses)\n\n**Highlights:**\n• Popular choice for CA, CS, and banking aspirants\n• Practical accounting focus\n• Industrial visits to local MIDC areas for corporate exposure",
+    "confidence": "high",
+    "source": "Commerce department"
+  },
+  {
+    "category": "Fees - SC/ST/OBC",
+    "question_patterns": ["sc", "st", "obc", "vjnt", "sbc", "reservation", "category", "caste", "concession"],
+    "answer": "Ahmednagar College provides **significant fee concessions** for reserved categories:\n\n• **SC / ST / VJNT / OBC / SBC** — full fee waiver via **MahaDBT portal**\n• **EBC (Economically Backward Class)** — 50% tuition fee waiver\n• **Earn & Learn Scheme** — work-study opportunity with hourly stipend\n\n**To apply:** Visit mahadbt.maharashtra.gov.in\n**For help:** Contact the college scholarship cell at 0241-2359571",
+    "confidence": "high",
+    "source": "Government schemes"
+  },
+  {
+    "category": "Sports",
+    "question_patterns": ["sports", "games", "cricket", "football", "basketball", "volleyball", "tennis", "gym", "athletics"],
+    "answer": "Ahmednagar College has extensive sports facilities:\n\n• Large **sports ground** for cricket, football, athletics\n• Courts for **basketball, volleyball, tennis**\n• Fully equipped **indoor gymnasium** for students and staff\n• Regular inter-collegiate competitions\n• Physical education is a priority with professional coaching staff",
+    "confidence": "high",
+    "source": "Physical education dept"
+  },
+  {
+    "category": "Exam / Academics",
+    "question_patterns": ["exam", "semester", "results", "marks", "grading", "cbcs", "credit", "test"],
+    "answer": "Ahmednagar College follows the **Choice Based Credit System (CBCS)** as prescribed by SPPU. Students earn credits through core subjects, electives, and skill enhancement courses.\n\nExams are conducted by SPPU. For specific exam schedules, results, and hall tickets, visit the college notice board or contact the exam cell: **0241-2359571**.",
+    "confidence": "medium",
+    "source": "Academic office"
+  },
+  {
+    "category": "Anti-Ragging",
+    "question_patterns": ["ragging", "bullying", "harassment", "complaint", "grievance", "safety"],
+    "answer": "Ahmednagar College has a strict **zero-tolerance anti-ragging policy**. The college has:\n\n• Anti-Ragging Committee and Squad\n• Grievance Redressal Cell\n• Internal Complaints Committee (ICC) for women\n\n**To report any issue:** Contact the college office at **0241-2359571** or email **ahmednagarcollege1947@gmail.com**. All complaints are handled confidentially.",
+    "confidence": "high",
+    "source": "College policies"
+  },
+  {
+    "category": "Faculty",
+    "question_patterns": ["faculty", "professor", "teacher", "staff", "hod", "department"],
+    "answer": "Ahmednagar College has experienced faculty across all departments. Many faculty members hold advanced degrees and active research projects funded by UGC, DST, and BCUD.\n\nFor a specific faculty member's contact, use the college website: **www.aca.edu.in**, or contact the college at **0241-2359571**.",
+    "confidence": "medium",
+    "source": "College directory"
+  },
+  {
+    "category": "Website",
+    "question_patterns": ["website", "site", "online", "portal", "aca", "edu"],
+    "answer": "**Official college website:** www.aca.edu.in\n\nUse it for:\n• Online admission portal\n• Merit list results\n• Notices and circulars\n• Fee payment\n• Faculty and department info\n• Academic calendars",
+    "confidence": "high",
+    "source": "College IT"
+  },
+  {
+    "category": "College Motto",
+    "question_patterns": ["motto", "slogan", "tagline", "saying", "philosophy"],
+    "answer": "Ahmednagar College's motto is **\"Not Things but Men\"**.\n\nIt reflects the vision of Rev. Dr. B. P. Hivale — prioritizing the development of well-rounded, principled individuals over material achievement.",
+    "confidence": "high",
+    "source": "Official college motto"
+  },
+  {
+    "category": "Alumni",
+    "question_patterns": ["alumni", "famous", "notable", "graduated", "student", "former"],
+    "answer": "Ahmednagar College has produced notable alumni across arts, science, and public service. The college's legacy — as the first college in the Ahmednagar district — has shaped generations of leaders, academics, and professionals.\n\nFor specific alumni information, visit the college website: **www.aca.edu.in**",
+    "confidence": "medium",
+    "source": "College records"
+  },
+  {
+    "category": "NCC",
+    "question_patterns": ["ncc", "cadet", "defence", "army", "military", "battalion", "certificate"],
+    "answer": "Ahmednagar College is the **headquarters for the 17 Maharashtra Battalion NCC**. Both boys and girls can enroll.\n\n**Benefits:**\n• Rigorous military training\n• Annual Training Camps (ATC)\n• 'B' and 'C' certificate exams\n• Significant advantage in defense and police recruitment\n\nThe NCC unit is one of the most active in the region.",
+    "confidence": "high",
+    "source": "NCC unit"
+  },
+  {
+    "category": "NSS",
+    "question_patterns": ["nss", "social", "service", "camp", "village", "volunteer"],
+    "answer": "The **National Service Scheme (NSS)** at Ahmednagar College is highly active. Students participate in:\n\n• Winter camps in adopted villages\n• Literacy drives\n• Blood donation camps\n• Tree plantation and environmental conservation\n• Health awareness campaigns\n• Watershed management\n\nNSS participation earns credits and builds a strong social service record.",
+    "confidence": "high",
+    "source": "NSS unit"
+  },
+  {
+    "category": "Cultural Events",
+    "question_patterns": ["fest", "cultural", "horizon", "dance", "music", "drama", "event"],
+    "answer": "The **Cultural Committee** of Ahmednagar College organizes **\"Horizon\"** — the flagship annual inter-collegiate festival featuring:\n\n• Dance competitions\n• Music performances\n• Drama and theater\n• Fine arts competitions\n\nThe Debate & Elocution Society also trains students for state and national competitions.",
+    "confidence": "high",
+    "source": "Cultural committee"
+  },
+  {
+    "category": "Minority Status",
+    "question_patterns": ["minority", "christian", "religion", "community", "secular"],
+    "answer": "Ahmednagar College is a **Christian Minority Institution** managed by the BPHE Society. However, it **opens its doors to students of all castes, creeds, and religions**, maintaining a highly secular and inclusive academic environment.\n\nMinority status does not restrict admission for non-Christian students — it's an inclusive institution.",
+    "confidence": "high",
+    "source": "College administration"
+  },
+  {
+    "category": "Canteen",
+    "question_patterns": ["canteen", "food", "eat", "lunch", "cafeteria", "mess"],
+    "answer": "Ahmednagar College has **6 canteens** on campus providing diverse food options at subsidized rates.\n\nAdditional amenities include:\n• On-campus post office\n• Banking facilities / nearby ATMs\n• Auditorium for events\n• Medical room with visiting doctor for emergencies",
+    "confidence": "high",
+    "source": "Campus services"
+  },
+  {
+    "category": "Medical",
+    "question_patterns": ["medical", "doctor", "health", "emergency", "first", "aid"],
+    "answer": "Ahmednagar College has a **dedicated medical room with a visiting doctor** for student emergencies.\n\nFor serious health issues, students are referred to nearby hospitals. The campus also conducts regular health awareness campaigns and blood donation drives through the NSS unit.",
+    "confidence": "high",
+    "source": "Campus services"
+  },
+  {
+    "category": "NAAC",
+    "question_patterns": ["naac", "grade", "accreditation", "b++", "cycle"],
+    "answer": "Ahmednagar College is **NAAC accredited with a B++ grade** (subject to change after each reaccreditation cycle).\n\nFor the latest NAAC grade and cycle data, check the college website: **www.aca.edu.in** or contact the office: **0241-2359571**.",
+    "confidence": "medium",
+    "source": "NAAC records"
+  }
+]

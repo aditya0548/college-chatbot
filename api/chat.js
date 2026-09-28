@@ -1,3 +1,5 @@
+import { searchKB, getKBContext } from '../src/lib/kb.js';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -13,13 +15,32 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server misconfigured' });
   }
 
+  // 1. Try KB first
+  const kbMatch = await searchKB(message);
+  if (kbMatch) {
+    return res.status(200).json({
+      reply: kbMatch.answer,
+      source: 'kb',
+      category: kbMatch.category,
+    });
+  }
+
+  // 2. No strong match — get context for Gemini
+  const kbContext = await getKBContext(message);
+
+  // Build context string for the AI
+  const contextBlock = kbContext.length > 0
+    ? `\n\nRelevant information from our college knowledge base (use this if applicable, but don't invent facts):\n\n${kbContext.map(e => `• ${e.category}: ${e.answer}`).join('\n')}`
+    : '';
+
+  // 3. Append context to system prompt
   const SYSTEM = `You are ACA47, the official assistant for BPHE Society's Ahmednagar College (est. 1947, SPPU affiliated, motto 'Not Things but Men'). Answer student questions about admissions, courses, fees, hostel, faculty, scholarships, and campus life.
 
 Rules:
 - Keep answers concise (under 120 words unless the question requires more).
 - If you don't know something, say so and suggest contacting the college: 0241-2359571, ahmednagarcollege1947@gmail.com
 - Never invent facts about the college.
-- Tone: warm, helpful, respectful.`;
+- Tone: warm, helpful, respectful.${contextBlock}`;
 
   const contents = [
     { role: 'user', parts: [{ text: SYSTEM }] },
@@ -76,7 +97,7 @@ Rules:
     }
 
     const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a reply.';
-    return res.status(200).json({ reply });
+    return res.status(200).json({ reply, source: 'ai' });
   } catch (err) {
     console.error('Server exception:', err.message, err.stack);
     return res.status(500).json({ error: 'Server error' });

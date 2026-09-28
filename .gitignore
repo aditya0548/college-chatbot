@@ -4,3 +4,6 @@ dist/
 .env.local
 .DS_Store
 *.log
+.env.scripts
+.env.scripts.save
+.env.*.save
