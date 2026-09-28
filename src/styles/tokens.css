@@ -1,0 +1,26 @@
+:root {
+  --bg-app: #0B0D10;
+  --bg-card: #14171C;
+  --bg-elevated: #1C2027;
+  --bg-input: #181B21;
+
+  --text-primary: #E8ECF0;
+  --text-secondary: #A0A8B4;
+  --text-muted: #6B7280;
+
+  --accent: #3B82F6;              /* clean blue */
+  --accent-hover: #2563EB;
+  --accent-soft: rgba(59, 130, 246, 0.15);
+
+  --border-soft: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.12);
+
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
