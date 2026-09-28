@@ -32,41 +32,53 @@ Rules:
   ];
 
   try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+    let response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ contents }),
       }
     );
-
     let data = await response.json();
     
-    // Fallback if model fails (e.g., 404 or not found)
+    // First fallback: gemini-2.0-flash
     if (!response.ok && data.error?.code === 404) {
-      const fallbackResponse = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`,
+      console.warn('gemini-2.5-flash returned 404, falling back to gemini-2.0-flash...');
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ contents }),
         }
       );
-      data = await fallbackResponse.json();
-      if (!fallbackResponse.ok) {
-        console.error('Gemini fallback error:', data);
-        return res.status(500).json({ error: 'AI error' });
-      }
-    } else if (!response.ok) {
-      console.error('Gemini error:', data);
+      data = await response.json();
+    }
+
+    // Second fallback: gemini-2.5-flash-lite
+    if (!response.ok && data.error?.code === 404) {
+      console.warn('gemini-2.0-flash returned 404, falling back to gemini-2.5-flash-lite...');
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents }),
+        }
+      );
+      data = await response.json();
+    }
+
+    if (!response.ok) {
+      console.error('Gemini API Error:', JSON.stringify(data, null, 2));
       return res.status(500).json({ error: 'AI error' });
     }
 
     const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a reply.';
     return res.status(200).json({ reply });
   } catch (err) {
-    console.error('Server error:', err);
+    console.error('Server exception:', err.message, err.stack);
     return res.status(500).json({ error: 'Server error' });
   }
 }
