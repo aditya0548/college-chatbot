@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthProvider';
-import { ProtectedRoute } from './components/ProtectedRoute';
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import ACA47 from './pages/ACA47';
 
 const LoginRoute = () => {
   const { session, loading } = useAuth();
@@ -23,14 +22,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<LoginRoute />} />
-      <Route 
-        path="/" 
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } 
-      />
+      <Route path="/" element={<ACA47 />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

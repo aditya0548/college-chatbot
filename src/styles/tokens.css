@@ -1,21 +1,22 @@
 :root {
-  --bg-app: #0B0D10;
-  --bg-card: #14171C;
-  --bg-elevated: #1C2027;
-  --bg-input: #181B21;
+  /* Light pearl theme */
+  --bg-app: #F5F4F7;          /* near-white, warm-cool */
+  --bg-surface: #FFFFFF;       /* pure white cards */
+  --bg-elevated: #FAFAFC;      /* subtle lift */
 
-  --text-primary: #E8ECF0;
-  --text-secondary: #A0A8B4;
-  --text-muted: #6B7280;
+  --text-primary: #1A1A1C;     /* near-black, cool */
+  --text-secondary: #4A4550;   /* slate gray */
+  --text-muted: #8A8590;       /* muted */
 
-  --accent: #3B82F6;              /* clean blue */
-  --accent-hover: #2563EB;
-  --accent-soft: rgba(59, 130, 246, 0.15);
+  --accent: #4A4550;            /* deep slate — primary action color */
+  --accent-hover: #2E2A34;      /* darker slate on hover */
+  --accent-soft: rgba(74, 69, 80, 0.08);
 
-  --border-soft: rgba(255, 255, 255, 0.06);
-  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-soft: rgba(26, 26, 28, 0.08);
+  --border-medium: rgba(26, 26, 28, 0.15);
 
-  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 4px 16px rgba(26, 26, 28, 0.06);
+  --shadow-card: 0 8px 32px rgba(26, 26, 28, 0.10);
 
   --radius-sm: 6px;
   --radius-md: 10px;
