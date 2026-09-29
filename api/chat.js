@@ -1,5 +1,22 @@
 import { searchKB, getKBContext } from '../src/lib/kb.js';
 
+async function callGemini(model, contents, apiKey) {
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents }),
+      }
+    );
+    const data = await response.json();
+    return { ok: response.ok, data };
+  } catch (error) {
+    return { ok: false, data: { error: { message: error.message } } };
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -53,50 +70,32 @@ Rules:
   ];
 
   try {
-    let response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents }),
-      }
-    );
-    let data = await response.json();
+    console.log('Attempting primary model: gemini-3.6-flash');
+    let result = await callGemini('gemini-3.6-flash', contents, apiKey);
     
-    // First fallback: gemini-3.5-flash
-    if (!response.ok && data.error?.code === 404) {
-      console.warn('gemini-3.6-flash returned 404, falling back to gemini-3.5-flash...');
-      response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents }),
-        }
-      );
-      data = await response.json();
+    if (!result.ok && result.data?.error?.code === 503) {
+      console.warn('gemini-3.6-flash returned 503, waiting 1000ms and retrying...');
+      await new Promise(r => setTimeout(r, 1000));
+      result = await callGemini('gemini-3.6-flash', contents, apiKey);
+    }
+    
+    if (!result.ok) {
+      console.warn(`gemini-3.6-flash failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.5-flash-lite...`);
+      result = await callGemini('gemini-3.5-flash-lite', contents, apiKey);
+    }
+    
+    if (!result.ok) {
+      console.warn(`gemini-3.5-flash-lite failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.5-flash...`);
+      result = await callGemini('gemini-3.5-flash', contents, apiKey);
+    }
+    
+    if (!result.ok) {
+      console.error('All models failed. Last error:', JSON.stringify(result.data, null, 2));
+      return res.status(500).json({ error: 'AI service temporarily unavailable' });
     }
 
-    // Second fallback: gemini-3.5-flash-lite
-    if (!response.ok && data.error?.code === 404) {
-      console.warn('gemini-3.5-flash returned 404, falling back to gemini-3.5-flash-lite...');
-      response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents }),
-        }
-      );
-      data = await response.json();
-    }
-
-    if (!response.ok) {
-      console.error('Gemini API Error:', JSON.stringify(data, null, 2));
-      return res.status(500).json({ error: 'AI error' });
-    }
-
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a reply.';
+    console.log('Successfully generated response.');
+    const reply = result.data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a reply.';
     return res.status(200).json({ reply, source: 'ai' });
   } catch (err) {
     console.error('Server exception:', err.message, err.stack);
