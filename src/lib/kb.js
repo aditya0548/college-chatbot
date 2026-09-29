@@ -31,8 +31,8 @@ export async function searchKB(question) {
   })).sort((a, b) => b.score - a.score);
 
   const best = scored[0];
-  // Require at least 2 keyword matches to consider it a "strong" hit
-  if (best.score < 2) return null;
+  // Require at least 1 keyword match to consider it a "strong" hit
+  if (best.score < 1) return null;
 
   return best.entry;
 }
