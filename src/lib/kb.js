@@ -28,7 +28,10 @@ export async function searchKB(question) {
   const scored = data.map(entry => ({
     entry,
     score: keywords.filter(k => entry.question_patterns.includes(k)).length,
-  })).sort((a, b) => b.score - a.score);
+  })).sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return new Date(b.entry.updated_at) - new Date(a.entry.updated_at);
+  });
 
   const best = scored[0];
   // Require at least 1 keyword match to consider it a "strong" hit
