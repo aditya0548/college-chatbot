@@ -38,6 +38,7 @@ h1, h2, h3, h4, .display-font {
   position: relative;
   width: 100vw;
   min-height: 100vh;
+  min-height: 100dvh;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
@@ -109,6 +110,7 @@ h1, h2, h3, h4, .display-font {
   flex-direction: column;
   padding-top: 64px; /* offset header */
   height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
 }
 
 .hero {
@@ -147,4 +149,10 @@ h1, h2, h3, h4, .display-font {
   margin: 0 auto;
   width: 100%;
   position: relative;
+}
+
+@media (max-width: 640px) {
+  .hero-title { font-size: 2rem; }
+  .hero-sub { font-size: 0.9rem; }
+  .hero { margin-top: 4vh; }
 }

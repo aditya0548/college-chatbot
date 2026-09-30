@@ -1,5 +1,6 @@
 .admin-page {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 40px 20px;
   position: relative;
   z-index: 10;
@@ -21,6 +22,7 @@
   max-width: 400px;
   text-align: center;
   margin-top: 10vh;
+  margin-top: 10dvh;
 }
 
 .admin-login-container h2 {
@@ -293,6 +295,7 @@
   padding: 32px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   max-height: 90vh;
+  max-height: 90dvh;
   overflow-y: auto;
 }
 
