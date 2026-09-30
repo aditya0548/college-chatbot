@@ -253,3 +253,22 @@
   font-family: monospace;
   font-size: 0.9em;
 }
+
+@media (max-width: 640px) {
+  .chat-messages {
+    padding: 12px 0;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+  }
+  .message-wrapper {
+    max-width: 88%;
+  }
+  .message-bubble {
+    padding: 12px 16px;
+  }
+  .chat-input-wrapper {
+    flex-shrink: 0;
+    padding-bottom: 12px;
+  }
+}

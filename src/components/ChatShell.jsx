@@ -6,13 +6,16 @@ import '../styles/chat.css';
 
 const INITIAL_MESSAGE = { id: 1, role: 'bot', content: 'Hello! I am ACA47. How can I help you today?' };
 
-export default function ChatShell() {
+export default function ChatShell({ onInteract }) {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
   const handleSend = async (text) => {
     if (!text.trim()) return;
+    
+    if (onInteract) onInteract();
+
     
     const userMessage = { id: Date.now(), role: 'user', content: text };
     setMessages((prev) => [...prev, userMessage]);

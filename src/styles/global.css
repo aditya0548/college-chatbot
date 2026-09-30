@@ -152,7 +152,36 @@ h1, h2, h3, h4, .display-font {
 }
 
 @media (max-width: 640px) {
-  .hero-title { font-size: 2rem; }
-  .hero-sub { font-size: 0.9rem; }
-  .hero { margin-top: 4vh; }
+  .hero {
+    margin-top: 2vh;
+    margin-bottom: 12px;
+  }
+  .hero-title { font-size: 1.75rem; }
+  .hero-sub { font-size: 0.85rem; }
+  
+  .app-main.compact .hero { display: none; }
+
+  .chat-shell {
+    max-width: 100%;
+    padding: 0 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .app-main {
+    height: calc(100dvh - 64px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 64px;
+    padding-bottom: 0;
+  }
+
+  .app-header {
+    z-index: 100;
+  }
+  .header-right, .header-left {
+    z-index: 101;
+  }
 }

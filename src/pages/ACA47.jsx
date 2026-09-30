@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../context/AuthProvider';
 import AuroraBackground from '../components/AuroraBackground';
 import ChatShell from '../components/ChatShell';
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const ACA47 = () => {
   const { session, signOut } = useAuth();
   const navigate = useNavigate();
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   return (
     <div className="app">
@@ -32,14 +33,14 @@ const ACA47 = () => {
         </div>
       </header>
 
-      <main className="app-main">
+      <main className={`app-main ${hasInteracted ? 'compact' : ''}`}>
         <div className="hero">
           <h1 className="hero-title">Ask anything.</h1>
           <p className="hero-sub">The voice of Ahmednagar College — since 1947.</p>
         </div>
 
         <div className="chat-shell">
-          <ChatShell />
+          <ChatShell onInteract={() => setHasInteracted(true)} />
         </div>
       </main>
     </div>
