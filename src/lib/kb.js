@@ -28,12 +28,28 @@ export async function searchKB(question) {
   const scored = data.map(entry => ({
     entry,
     score: keywords.filter(k => entry.question_patterns.includes(k)).length,
-  })).sort((a, b) => {
+  }));
+
+  const feeKeywords = ['fee', 'fees', 'cost', 'kitna', 'price', 'charge'];
+  const courseCodes = ['bca', 'bsc', 'ba', 'bcom', 'ma', 'msc', 'mcom', 'bba'];
+  const questionLower = question.toLowerCase();
+  const hasFeeKeyword = feeKeywords.some(k => questionLower.includes(k));
+  const hasCourseCode = courseCodes.some(c => questionLower.includes(c));
+
+  const sorted = scored.sort((a, b) => {
+    // If the question is fee-related and has a course code, prioritize Fees categories
+    if (hasFeeKeyword && hasCourseCode) {
+      const aIsFee = a.entry.category.startsWith('Fees');
+      const bIsFee = b.entry.category.startsWith('Fees');
+      if (aIsFee && !bIsFee) return -1;
+      if (!aIsFee && bIsFee) return 1;
+    }
+    // Otherwise use existing logic: score, then updated_at
     if (b.score !== a.score) return b.score - a.score;
     return new Date(b.entry.updated_at) - new Date(a.entry.updated_at);
   });
 
-  const best = scored[0];
+  const best = sorted[0];
   // Require at least 1 keyword match to consider it a "strong" hit
   if (best.score < 1) return null;
 
