@@ -1,6 +1,8 @@
 import { searchKB, getKBContext } from '../src/lib/kb.js';
 
-async function callGemini(model, contents, apiKey) {
+async function callGeminiWithTimeout(model, contents, apiKey, timeoutMs = 10000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
@@ -8,12 +10,18 @@ async function callGemini(model, contents, apiKey) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ contents }),
+        signal: controller.signal,
       }
     );
+    clearTimeout(timeout);
     const data = await response.json();
     return { ok: response.ok, data };
-  } catch (error) {
-    return { ok: false, data: { error: { message: error.message } } };
+  } catch (err) {
+    clearTimeout(timeout);
+    if (err.name === 'AbortError') {
+      return { ok: false, data: { error: { message: 'Gemini timed out after 10s', code: 'TIMEOUT' } } };
+    }
+    return { ok: false, data: { error: { message: err.message, code: 'FETCH_ERROR' } } };
   }
 }
 
@@ -71,27 +79,30 @@ Rules:
 
   try {
     console.log('Attempting primary model: gemini-3.6-flash');
-    let result = await callGemini('gemini-3.6-flash', contents, apiKey);
+    let result = await callGeminiWithTimeout('gemini-3.6-flash', contents, apiKey);
     
     if (!result.ok && result.data?.error?.code === 503) {
       console.warn('gemini-3.6-flash returned 503, waiting 1000ms and retrying...');
       await new Promise(r => setTimeout(r, 1000));
-      result = await callGemini('gemini-3.6-flash', contents, apiKey);
+      result = await callGeminiWithTimeout('gemini-3.6-flash', contents, apiKey);
     }
     
     if (!result.ok) {
       console.warn(`gemini-3.6-flash failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.5-flash-lite...`);
-      result = await callGemini('gemini-3.5-flash-lite', contents, apiKey);
+      result = await callGeminiWithTimeout('gemini-3.5-flash-lite', contents, apiKey);
     }
     
     if (!result.ok) {
       console.warn(`gemini-3.5-flash-lite failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.5-flash...`);
-      result = await callGemini('gemini-3.5-flash', contents, apiKey);
+      result = await callGeminiWithTimeout('gemini-3.5-flash', contents, apiKey);
     }
     
     if (!result.ok) {
-      console.error('All models failed. Last error:', JSON.stringify(result.data, null, 2));
-      return res.status(500).json({ error: 'AI service temporarily unavailable' });
+      console.error('All models failed:', result.data);
+      return res.status(200).json({
+        reply: "I'm having trouble reaching my knowledge service right now. Please try again, or contact the college at **0241-2359571**.",
+        source: 'fallback'
+      });
     }
 
     console.log('Successfully generated response.');
