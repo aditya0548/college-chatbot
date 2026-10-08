@@ -78,23 +78,23 @@ Rules:
   ];
 
   try {
-    console.log('Attempting primary model: gemini-3.6-flash');
-    let result = await callGeminiWithTimeout('gemini-3.6-flash', contents, apiKey);
+    console.log('Attempting primary model: gemini-3.5-flash-lite');
+    let result = await callGeminiWithTimeout('gemini-3.5-flash-lite', contents, apiKey);
     
     if (!result.ok && result.data?.error?.code === 503) {
-      console.warn('gemini-3.6-flash returned 503, waiting 1000ms and retrying...');
+      console.warn('gemini-3.5-flash-lite returned 503, waiting 1000ms and retrying...');
       await new Promise(r => setTimeout(r, 1000));
-      result = await callGeminiWithTimeout('gemini-3.6-flash', contents, apiKey);
-    }
-    
-    if (!result.ok) {
-      console.warn(`gemini-3.6-flash failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.5-flash-lite...`);
       result = await callGeminiWithTimeout('gemini-3.5-flash-lite', contents, apiKey);
     }
     
     if (!result.ok) {
       console.warn(`gemini-3.5-flash-lite failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.5-flash...`);
       result = await callGeminiWithTimeout('gemini-3.5-flash', contents, apiKey);
+    }
+    
+    if (!result.ok) {
+      console.warn(`gemini-3.5-flash failed: ${result.data?.error?.message || 'unknown error'}, falling back to gemini-3.6-flash...`);
+      result = await callGeminiWithTimeout('gemini-3.6-flash', contents, apiKey);
     }
     
     if (!result.ok) {
